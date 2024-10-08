@@ -1,0 +1,135 @@
+.our-contacts {
+  &__body {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background-color: var(--section-bg-color);
+  }
+  &__content {
+    padding: 70px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  &__map {
+    position: relative;
+    height: 560px;
+    background-image: url('../images/map-image.png');
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
+  &__title {
+    font-size: 32px;
+    font-weight: 600;
+    margin-bottom: 16px;
+  }
+  &__item {
+    font-size: 23px;
+    margin-bottom: 10px;
+    font-weight: 400;
+  }
+  &__email {
+    margin-bottom: 40px;
+  }
+  &__text {
+    font-size: 21px;
+    line-height: 35px;
+    color: var(--color-gray);
+  }
+}
+
+@include desktop {
+  .our-contacts {
+    &__map {
+      height: 520px;
+    }
+    &__content {
+      padding: 60px;
+    }
+    &__title {
+      font-size: 30px;
+      margin-bottom: 14px;
+    }
+    &__item {
+      font-size: 21px;
+      margin-bottom: 12px;
+    }
+    &__email {
+      margin-bottom: 36px;
+    }
+    &__text {
+      font-size: 19px;
+      line-height: 32px;
+    }
+  }
+}
+
+@include tablet {
+  .our-contacts {
+    &__body {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &__map {
+      height: 400px;
+    }
+    &__content {
+      padding: 50px;
+    }
+    &__title {
+      font-size: 28px;
+      margin-bottom: 12px;
+    }
+  }
+}
+
+@include phablet {
+  .our-contacts {
+    &__map {
+      height: 300px;
+    }
+    &__content {
+      padding: 40px;
+    }
+    &__title {
+      font-size: 24px;
+      margin-bottom: 10px;
+    }
+    &__item {
+      font-size: 18px;
+      margin-bottom: 10px;
+    }
+    &__email {
+      margin-bottom: 30px;
+    }
+    &__text {
+      font-size: 18px;
+      line-height: 28px;
+    }
+  }
+}
+
+@include mobile {
+  .our-contacts {
+    &__map {
+      height: 260px;
+    }
+    &__content {
+      padding: 24px 18px;
+    }
+    &__title {
+      font-size: 20px;
+      margin-bottom: 12px;
+    }
+    &__item {
+      font-size: 14px;
+      margin-bottom: 8px;
+    }
+    &__email {
+      margin-bottom: 18px;
+    }
+    &__text {
+      font-size: 14px;
+      line-height: 23px;
+    }
+  }
+}

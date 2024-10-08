@@ -1,0 +1,54 @@
+.cost-stock {
+  padding: 45px 0px;
+  &__image {
+    position: relative;
+    &-count {
+      position: absolute; 
+      bottom: -25px;
+      left: -90px;
+    }
+  }
+}
+
+@include tablet {
+  .cost-stock {
+    padding: 45px 0px;
+    &__inner {
+      gap: 30px;
+    }
+    &__content {
+      order: 1;
+    }
+    &__image {
+      order: 2;
+      &-main {
+        max-width: 240px;
+      }
+      &-count {
+        bottom: -20px;
+        left: -70px;
+        max-width: 220px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .cost-stock {
+    padding: 36px 0px 26px 0px;
+    &__inner {
+      gap: 22px;
+    }
+    &__image {
+      &-main {
+        display: none;
+      }
+      &-count {
+        max-width: 200px;
+        position: relative;
+        left: auto;
+        bottom: auto;
+      }
+    }
+  }
+}

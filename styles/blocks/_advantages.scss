@@ -1,0 +1,119 @@
+.advantages {
+  padding-bottom: 90px;
+  &__title {
+    margin-bottom: 46px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 50px;
+  }
+  &__item {
+    @include align-center;
+    gap: 18px;
+    &-image {
+      min-width: 115px;
+      min-height: 115px;
+      object-fit: cover;
+      border-radius: 100%;
+      border: 2px solid var(--primary-color);
+    }
+    &-title {
+      margin-bottom: 7px;
+      font-size: 21px;
+      font-weight: 600;
+    }
+    &-description {
+      font-size: 17px;
+      line-height: 28px;
+      & span {
+        color: var(--secondary-color);
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .advantages {
+    padding-bottom: 80px;
+    &__list {
+      gap: 36px;
+    }
+    &__title {
+      margin-bottom: 40px;
+    }
+    &__item {
+      &-image {
+        min-width: 90px;
+        min-height: 90px;
+        max-width: 90px;
+        max-height: 90px;
+      }
+      &-title {
+        font-size: 18px;
+      }
+      &-description {
+        font-size: 14px;
+        line-height: 26px;
+      }
+    }
+  }
+}
+
+@include phablet {
+  .advantages {
+    padding-bottom: 70px;
+    &__title {
+      margin-bottom: 32px;
+    }
+    &__list {
+      grid-template-columns: repeat(1, 1fr);
+      gap: 40px;
+    }
+    &__item {
+      &-image {
+        min-width: 85px;
+        min-height: 85px;
+        max-width: 85px;
+        max-height: 85px;
+      }
+      &-title {
+        font-size: 18px;
+      }
+      &-description {
+        line-height: 25px;
+        font-size: 15px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .advantages {
+    padding-bottom: 50px;
+    &__title {
+      margin-bottom: 24px;
+    }
+    &__list {
+      gap: 32px;
+    }
+    &__item {
+      gap: 13px;
+      &-image {
+        min-width: 70px;
+        min-height: 70px;
+        max-width: 70px;
+        max-height: 70px;
+      }
+      &-title {
+        margin-bottom: 6px;
+        font-size: 15px;
+      }
+      &-description {
+        line-height: 23px;
+        font-size: 13px;
+      }
+    }
+  }
+}

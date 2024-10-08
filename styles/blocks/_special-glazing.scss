@@ -1,0 +1,228 @@
+.special-glazing {
+  background-color: var(--section-bg-color);
+  padding: 36px 0px;
+  &__inner {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+  &__image {
+    border-radius: var(--border-radius-large);
+    background-color: var(--color-light);
+    padding: 10px;
+    width: 80%;
+    & img {
+      border-radius: var(--border-radius-large);
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  &__content {
+    padding-top: 30px;
+    padding-bottom: 20px;
+  }
+  &__title {
+    font-size: 22px;
+    line-height: 30px;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+  }
+  &__subtitle {
+    font-size: 24px;
+    line-height: 32px;
+    font-weight: 600;
+    margin-bottom: 12px;
+  }
+  &__description {
+    color: var(--color-gray);
+    font-size: 18px;
+    line-height: 27px;
+    margin-bottom: 24px;
+  }
+  &__list {
+    margin-bottom: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    &-title {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+  }
+  &__item {
+    position: relative;
+    padding-left: 29px;
+    line-height: 24px;
+    font-weight: 500;
+    color: var(--color-gray);
+    &::before {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: 0;
+      background-image: url('../images/check-green.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+  &__btn {
+    font-size: 16px;
+  }
+}
+
+@include tablet {
+  .special-glazing {
+    &__inner {
+      display: flex;
+      gap: 24px;
+    }
+    &__image {
+      padding: 8px;
+      width: 100%;
+    }
+    &__content {
+      padding-top: 20px;
+      padding-bottom: 10px;
+    }
+    &__title {
+      font-size: 18px;
+      line-height: 26px;
+      margin-bottom: 8px;
+    }
+    &__subtitle {
+      font-size: 20px;
+      line-height: 28px;
+      margin-bottom: 8px;
+    }
+    &__description {
+      font-size: 16px;
+      line-height: 25px;
+      margin-bottom: 20px;
+    }
+    &__list {
+      margin-bottom: 24px;
+      gap: 18px;
+      &-title {
+        font-size: 16px;
+        margin-bottom: 16px;
+      }
+    }
+    &__item {
+      padding-left: 26px;
+      font-size: 15px;
+      &::before {
+        width: 21px;
+        height: 21px;
+      }
+    }
+    &__btn {
+      font-size: 14px;
+    }
+  }
+}
+
+@include phablet {
+  .special-glazing {
+    padding: 30px 0px;
+    &__inner {
+      flex-direction: column;
+    }
+    &__content {
+      padding: 0px;
+    }
+    &__image {
+      & img {
+        min-width: 100%;
+        height: auto;
+      }
+    }
+    &__title {
+      font-size: 16px;
+      line-height: 24px;
+      margin-bottom: 6px;
+    }
+    &__subtitle {
+      font-size: 18px;
+      line-height: 26px;
+      margin-bottom: 8px;
+    }
+    &__description {
+      font-size: 15px;
+      line-height: 24px;
+      margin-bottom: 20px;
+      max-width: 600px;
+    }
+    &__list {
+      margin-bottom: 22px;
+      gap: 16px;
+      &-title {
+        font-size: 15px;
+        margin-bottom: 14px;
+      }
+    }
+    &__item {
+      padding-left: 25px;
+      font-size: 15px;
+      &::before {
+        width: 20px;
+        height: 20px;
+      }
+    }
+    &__btn {
+      font-size: 14px;
+      padding: 16px 36px;
+    }
+  }
+}
+
+@include mobile {
+  .special-glazing {
+    padding: 24px 0px;
+    &__inner {
+      gap: 18px;
+    }
+    &__image {
+      padding: 0px;
+    }
+    &__title {
+      font-size: 15px;
+      line-height: 23px;
+      margin-bottom: 7px;
+    }
+    &__subtitle {
+      font-size: 14px;
+      line-height: 25px;
+      margin-bottom: 9px;
+    }
+    &__description {
+      font-size: 14px;
+      line-height: 23px;
+      margin-bottom: 18px;
+      max-width: 100%;
+    }
+    &__list {
+      margin-bottom: 18px;
+      gap: 12px;
+      &-title {
+        font-size: 14px;
+        margin-bottom: 13px;
+      }
+    }
+    &__item {
+      padding-left: 22px;
+      font-size: 13px;
+      &::before {
+        top: 4px;
+        width: 18px;
+        height: 18px;
+      }
+    }
+    &__btn {
+      font-size: 13px;
+      padding: 14px 32px;
+      width: 100%;
+    }
+  }
+}

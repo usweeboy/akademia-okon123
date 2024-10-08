@@ -1,0 +1,126 @@
+.reviews {
+  padding-bottom: 72px;
+  &__title {
+    margin-bottom: 24px;
+  }
+  &__item {
+    padding: 40px 0px;
+    border-bottom: 1px solid var(--color-gray-alt);
+    position: relative;
+    padding-left: 90px;
+    &:last-child {
+      border-bottom: none;
+    }
+    &-author {
+      margin-bottom: 16px;
+      &__image {
+        width: 70px;
+        height: 70px;
+        border-radius: 100%;
+        object-fit: cover;
+        position: absolute;
+        left: 0;
+      }
+      &__name {
+        font-weight: 500;
+        color: black;
+        font-size: 20px;
+        display: block;
+      }
+    }
+    &-text {
+      font-size: 18px;
+      line-height: 32px;
+    }
+  }
+}
+
+@include tablet {
+  .reviews {
+    padding-bottom: 60px;
+    &__title {
+      margin-bottom: 18px;
+    }
+    &__item {
+      padding: 32px 0px;
+      padding-left: 80px;
+      &-author {
+        margin-bottom: 14px;
+        &__image {
+          width: 55px;
+          height: 55px;
+        }
+        &__name {
+          font-size: 18px;
+        }
+      }
+      &-text {
+        font-size: 16px;
+        line-height: 30px;
+      }
+    }
+  }
+}
+
+@include phablet {
+  .reviews {
+    padding-bottom: 52px;
+    &__title {
+      margin-bottom: 14px;
+    }
+    &__item {
+      padding: 30px 0px;
+      padding-left: 70px;
+      &-author {
+        &__image {
+          width: 60px;
+          height: 60px;
+        }
+        &__name {
+          font-size: 16px;
+        }
+      }
+      &-text {
+        font-size: 15px;
+        line-height: 29px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .reviews {
+    padding-bottom: 25px;
+    &__title {
+      margin-bottom: 3px;
+    }
+    &__item {
+      padding: 24px 0px;
+      &-author {
+        margin-bottom: 8px;
+        @include align-center;
+        gap: 9px;
+        &__image {
+          width: 45px;
+          height: 45px;
+          position: static;
+        }
+        &__name {
+          font-size: 14px;
+        }
+      }
+      &-text {
+        font-size: 13px;
+        line-height: 23px;
+        height: 96px;
+        overflow: hidden;
+        &.active {
+          height: auto;
+        }
+      }
+      &-show__more {
+        font-size: 12px;
+      }
+    }
+  }
+}

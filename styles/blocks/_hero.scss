@@ -1,0 +1,140 @@
+.hero {
+  position: relative;
+  min-height: 500px;
+  &__bg {
+    position: absolute;
+    inset: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+    background-position: 100% 50%;
+    background-size: auto 500px;
+  }
+  &__title {
+    font-size: 48px;
+    line-height: 64px;
+    font-weight: 700;
+    margin-bottom: 28px;
+    max-width: 780px;
+    & span {
+      color: var(--primary-color);
+    }
+  }
+  &__list {
+    display: flex;
+    flex-direction: column;
+    gap: 22px;
+    margin-bottom: 38px;
+  }
+  &__item {
+    font-size: 18px;
+    font-weight: 500;
+    position: relative;
+    padding-left: 30px;
+    & span {
+      color: var(--primary-color);
+      font-weight: 600;
+      white-space: nowrap; 
+    }
+    &::before {
+      content: '';
+      position: absolute;
+      width: 24px;
+      height: 24px;
+      left: 0;
+      background-image: url('../images/check-green.svg');
+      background-repeat: no-repeat;
+      background-size: cover;
+    }
+  }
+}
+
+@media (max-width: 1340px) {
+  .hero {
+    &__bg {
+      background-position: 0px;
+    }
+  }
+}
+
+@include desktop {
+  .hero {
+    &__bg {
+      background-position: -50px;
+    }
+  }
+}
+
+@include tablet {
+  .hero {
+    min-height: 480px;
+    &__bg {
+      background-position: -80px;
+      background-size: auto 480px;
+    }
+    &__title {
+      font-size: 44px;
+      line-height: 62px;
+      margin-bottom: 24px;
+    }
+    &__list {
+      gap: 18px;
+      margin-bottom: 30px;
+    }
+    &__item {
+      font-size: 16px;
+      padding-left: 25px;
+      &::before {
+        width: 21px;
+        height: 21px;
+      }
+    }
+  }
+}
+
+@include phablet {
+  .hero {
+    padding-bottom: 70px;
+    min-height: auto;
+    &__bg {
+      display: none;
+    }
+    &__inner {
+      padding: 0px;
+    }
+    &__title {
+      font-size: 40px;
+      line-height: 55px;
+      margin-bottom: 22px;
+    }
+  }
+}
+
+@include mobile {
+  .hero {
+    padding-bottom: 52px;
+    text-align: center;
+    &__title {
+      font-size: 30px;
+      line-height: 42px;
+      margin-bottom: 18px;
+    }
+    &__list {
+      max-width: 400px;
+      margin: 0px auto;
+      margin-bottom: 26px;
+      gap: 15px;
+    }
+    &__item {
+      font-size: 14px;
+      line-height: 22px;
+      padding-left: 23px;
+      text-align: start;
+      &::before {
+        top: 4px;
+        width: 18px;
+        height: 18px;
+      }
+    }
+  }
+}

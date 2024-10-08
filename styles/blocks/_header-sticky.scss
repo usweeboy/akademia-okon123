@@ -1,0 +1,107 @@
+.header-sticky {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  right: 0;
+  background-color: var(--color-light);
+  animation: animation-show 400ms;
+  border-bottom: 1px solid var(--color-gray-alt);
+  &.active {
+    display: block;
+  }
+  &__inner {
+    @include align-center;
+    justify-content: space-between;
+    padding: 18px 0px;
+  }
+  &__logo {
+    @include align-center;
+    gap: 12px;
+    & span {
+      font-size: 13px;
+      max-width: 200px;
+    }
+  }
+  &__phone {
+    font-size: 20px;
+    color: var(--primary-color);
+    font-weight: 700;
+    padding-right: 15px;
+  }
+  &__box {
+    @include align-center;
+  }
+  &__consultation {
+    padding-left: 15px;
+    border-left: 1px solid var(--color-gray);
+    color: var(--color-gray);
+    font-weight: 500;
+    cursor: pointer;
+  }
+  &__content {
+    @include align-center;
+    gap: 30px;
+  }
+  &__burger {
+    position: relative;
+    width: 34px;
+    height: 22px;
+    border: none;
+    cursor: pointer;
+    background: none;
+    & span {
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      right: 0;
+      background-color: #4C5866;
+      border-radius: 12px;
+      transition: transform var(--transition-duration), opacity var(--transition-duration), -webkit-transform var(--transition-duration);
+    }
+    & span:nth-child(1) {
+      transform: translateY(-9px);
+    }
+    & span:nth-child(3) {
+      transform: translateY(9px);
+    }
+    &.active span:nth-child(1) {
+      transform: translateY(0) rotate(45deg);
+    }
+    &.active span:nth-child(2) {
+      transform: translateY(0px) rotate(-45deg);
+    }
+    &.active span:nth-child(3) {
+      opacity: 0;
+    }
+  }
+  &__menu {
+    display: none;
+    border-top: 1px solid var(--color-gray-alt);
+    animation: animation-show 250ms;
+    &.active {
+      @include align-center;
+      justify-content: space-between
+    }
+    &-list {
+      @include align-center;
+    }
+  }
+}
+
+@keyframes animation-show {
+  from {
+    opacity: 0;
+  } 
+  to {
+    opacity: 1;
+  }
+}
+
+@include tablet {
+  .header-sticky {
+    &.active {
+      display: none;
+    }
+  }
+}

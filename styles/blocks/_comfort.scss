@@ -1,0 +1,121 @@
+.comfort {
+  padding-top: 15px;
+  padding-bottom: 90px;
+  &__title {
+    margin-bottom: 30px;
+    & br {
+      display: block;
+    }
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+  }
+  &__item {
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: var(--color-light);
+    border-radius: var(--border-radius-large);
+    padding: 28px;
+    &-name {
+      font-size: 22px;
+      line-height: 30px;
+      font-weight: 600;
+      text-transform: uppercase;
+      margin-bottom: 20px;  
+    }
+    &-price {
+      font-size: 20px;
+      line-height: 28px;
+      font-weight: 500;
+      margin-bottom: 50px;
+    }
+    &-btn {
+      background-color: var(--color-light);
+      color: var(--color-dark);
+      font-size: 14px;
+      padding: 16px 32px;
+      font-weight: 600;
+      @include hover {
+        background-color: var(--color-light);
+      }
+    }
+  }
+}
+
+@include tablet {
+  .comfort {
+    padding-top: 12px;
+    padding-bottom: 70px;
+    &__title {
+      margin-bottom: 32px;
+    }
+    &__list {
+      gap: 20px;
+    }
+    &__item {
+      padding: 24px;
+      &-name {
+        font-size: 18px;
+        line-height: 27px;
+        margin-bottom: 12px;  
+      }
+      &-price {
+        font-size: 18px;
+        line-height: 26px;
+        margin-bottom: 40px;
+      }
+      &-btn {
+        font-size: 13px;
+        padding: 14px 28px;
+      }
+    }
+  }
+}
+
+@include phablet {
+  .comfort {
+    padding-top: 10px;
+    padding-bottom: 65px;
+    &__title {
+      margin-bottom: 28px;
+    }
+    &__list {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    &__item {
+      padding: 28px;
+    }
+  }
+}
+
+@include mobile {
+  .comfort {
+    padding-top: 3px;
+    padding-bottom: 50px;
+    &__title {
+      margin-bottom: 24px;
+    }
+    &__list {
+      gap: 15px;
+    }
+    &__item {
+      padding: 24px 20px;
+      &-name {
+        font-size: 16px;
+        line-height: 25px;
+        margin-bottom: 10px;  
+      }
+      &-price {
+        font-size: 16px;
+        line-height: 25px;
+        margin-bottom: 34px;
+      }
+      &-btn {
+        font-size: 12px;
+        padding: 12px 24px;
+      }
+    }
+  }
+}

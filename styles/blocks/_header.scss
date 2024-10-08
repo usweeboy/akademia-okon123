@@ -1,0 +1,140 @@
+.header {
+  &__container {
+    max-width: 1180px;
+    margin: 0 auto;
+    padding: 0 20px;
+    z-index: 2;
+    @include mobile {
+      padding: 0 16px;
+    }
+  }
+  &__inner {
+    @include align-center;
+    justify-content: space-between;
+    padding: 24px 0px;
+    border-bottom: 1px solid var(--color-gray-alt);
+    background-color: var(--color-light);
+  }
+  &__logo {
+    @include align-center;
+    gap: 12px;
+    & img {
+      max-width: 160px;
+    }
+    & span {
+      font-size: 13px;
+      max-width: 200px;
+    }
+  }
+  &__content {
+    @include align-center;
+    gap: 25px;
+  }
+  &__info {
+    font-size: 15px;
+    display: flex;
+    gap: 18px;
+    &-box {
+      max-width: 240px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    &-item {
+      position: relative;
+      padding-left: 28px;
+    }
+    &-icon {
+      position: absolute;
+      left: 0;
+    }
+  }
+  &__phone {
+    & span {
+      font-size: 16px;
+    }
+  }
+  &__callback {
+    display: none;
+  }
+}
+
+@include tablet {
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    &__container {
+      max-width: 100%;
+      margin: auto;
+      padding: 0px;
+    }
+    &__inner {
+      position: relative;
+      z-index: 999;
+      padding: 20px;
+    }
+    &__logo {
+      gap: 8px;
+      & img {
+        max-width: 140px;
+      }
+      & span {
+        font-size: 11px;
+        max-width: 160px;
+      }
+    }
+    &__info {
+      display: none;
+    }
+    &__content {
+      gap: 15px;
+    } 
+    &__callback {
+      display: flex;
+      @include align-center;
+      gap: 8px;
+      font-size: 14px;
+      font-weight: 600;
+      color: #4C5866;
+    }
+  }
+}
+
+@include phablet {
+  .header {
+    &__inner {
+      padding: 16px;
+    }
+    &__logo {
+      & img {
+        max-width: 125px;
+      }
+      & span {
+        display: none;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .header {
+    &__inner {
+      padding: 13px 16px;
+    }
+    &__logo {
+      & img {
+        max-width: 108px;
+      }
+    }
+    &__content {
+      gap: 15px;
+    } 
+    &__callback {
+      font-size: 13px;
+      & svg {
+        display: none;
+      }
+    }
+  }
+}

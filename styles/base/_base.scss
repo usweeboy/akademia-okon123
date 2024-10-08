@@ -1,0 +1,215 @@
+html,
+body {
+  height: 100%;
+  font-family: var(--font-family);
+  font-weight: 400;
+  color: var(--color-dark);
+  position: relative;
+}
+
+a,
+input,
+button,
+textarea * {
+  transition-duration: var(--transition-duration);
+}
+
+@include tablet {
+  * {
+    -webkit-tap-highlight-color: transparent;
+  }
+}
+
+body.lock {
+  overflow: auto;
+  @include tablet {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  position: relative;
+  min-height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.main {
+  flex-grow: 1;
+}
+
+.container {
+  position: relative;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 20px;
+  z-index: 2;
+  @include mobile {
+    padding: 0 16px;
+  }
+}
+
+.section-offset {
+  padding: 70px 0px;
+  @include tablet {
+    padding: 62px 0px 70px 0px;
+  }
+  @include phablet {
+    padding: 54px 0px 60px 0px;
+  }
+  @include mobile {
+    padding: 40px 0px 48px 0px;
+  }
+}
+
+.page-title {
+  font-size: 36px;
+  line-height: 48px;
+  font-weight: 600;
+  @include tablet {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  @include phablet {
+    font-size: 28px;
+    line-height: 38px;
+  }
+  @include mobile {
+    font-size: 24px;
+    line-height: 32px;
+  }
+}
+
+.section-title {
+  font-size: 34px;
+  line-height: 48px;
+  font-weight: 600;
+  text-align: center;
+  & span {
+    color: var(--primary-color);
+  }
+  & br {
+    display: none;
+    @include mobile {
+      display: block;
+    }
+  }
+  @include tablet {
+    font-size: 30px;
+    line-height: 42px;
+  }
+  @include phablet {
+    font-size: 26px;
+    line-height: 36px;
+  }
+  @include mobile {
+    font-size: 22px;
+    line-height: 30px;
+  }
+}
+
+.visually-hidden {
+  opacity: 0;
+  visibility: hidden;
+  height: 0;
+}
+
+.primary-btn {
+  position: relative;
+  padding: 18px 40px;
+  color: var(--color-light);
+  font-weight: 500;
+  background-color: var(--primary-color);
+  font-size: 17px;
+  border-radius: var(--border-radius);
+  @include hover {
+    background-color: #3c71b6;
+  }
+  @include tablet {
+    font-size: 15px;
+  }
+  @include phablet {
+    font-size: 14px;
+  }
+  @include mobile {
+    padding: 16px 36px;
+    font-size: 13px;
+  }
+}
+
+.secondary-btn {
+  position: relative;
+  padding: 18px 40px;
+  color: var(--color-light);
+  font-weight: 500;
+  background: none;
+  border: 1px solid var(--color-light);
+  font-size: 17px;
+  border-radius: var(--border-radius);
+  &:before {
+    content:'';
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    background: rgba(255,255,255,0.1);
+    transition: all .9s ease;
+  }
+  @include hover {
+    &:before {
+      width: 100%;
+    }
+  }
+  @include tablet {
+    font-size: 15px;
+  }
+  @include phablet {
+    font-size: 14px;
+  }
+  @include mobile {
+    padding: 14px 36px;
+    font-size: 13px;
+  }
+}
+
+.primary-input {
+  width: 100%;
+  transition: all var(--transition-duration);
+  padding: 18px 14px;
+  font-size: 16px;
+  border-radius: var(--border-radius);
+  &::placeholder {
+    color: var(--color-gray);
+  }
+  @include tablet {
+    font-size: 15px;
+  }
+  @include phablet {
+    font-size: 14px;
+  }
+  @include mobile {
+    padding: 14px 12px;
+    font-size: 13px;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.swiper-slide {
+  height: auto !important;
+}
+
+.show-more {
+  font-size: 13px;
+  text-decoration: underline;
+  font-weight: 400;
+  color: var(--primary-color);
+  display: none;
+  @include mobile {
+    display: block;
+  }
+} 

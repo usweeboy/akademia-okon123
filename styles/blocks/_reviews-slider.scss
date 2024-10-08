@@ -1,0 +1,191 @@
+.reviews-slider {
+  padding-top: 32px;
+  padding-bottom: 90px;
+  &__title {
+    margin-bottom: 45px;
+  }
+  &__swiper {
+    position: relative;
+    margin-bottom: 52px;
+  }
+  &__control {
+    display: none;
+    color: var(--color-gray);
+  }
+  &__btn {
+    z-index: 9;
+    position: absolute;
+    background-color: var(--color-light);
+    border-radius: 100%;
+    border: 1px solid #d2d3d3;
+    box-shadow: 0px 1px 0px 0px rgba(27, 31, 36, 0.04);
+    color: #888589;
+    padding: 14px;
+    @include align-center;
+    justify-content: center;
+    @include hover {
+      border: 1px solid rgba(69, 127, 202, 0.5);
+      color: rgba(69, 127, 202, 0.5);
+    }
+    &-prev {
+      top: 50%;
+      left: 8px;
+    }
+    &-next {
+      top: 50%;
+      right: 8px;
+    }
+  }
+  &__pagination {
+    display: flex;
+    justify-content: center;
+    & span {
+      width: 13px;
+      height: 13px;
+      background-color: var(--primary-color);
+    }
+  }
+  &__bottom {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+.reviews-card {
+  @include align-center;
+  text-align: center;
+  position: relative;
+  z-index: 4;
+  &__body {
+    max-width: 750px;
+    margin: 0px auto;
+  }
+  &__text {
+    font-size: 22px;
+    line-height: 38px;
+    margin-bottom: 21px;
+  }
+  &__author {
+    font-weight: 500;
+    font-size: 22px;
+  }
+  &__more {
+    display: none;
+  }
+  &__bottom {
+    display: flex;
+    justify-content: center;
+  }
+}
+
+@include tablet {
+  .reviews-slider {
+    padding-top: 24px;
+    padding-bottom: 70px;
+    &__title {
+      margin-bottom: 36px;
+    }
+    &__swiper {
+      margin-bottom: 44px;
+    }
+    &__control {
+      @include align-center;
+      justify-content: center;
+      gap: 12px;
+      margin-bottom: 20px;
+      &-btn {
+        @include align-center;
+      }
+      &-pagination {
+        font-size: 16px;
+        width: auto;
+      }
+    }
+    &__btn {
+      display: none;
+    }
+  }
+}
+
+@include phablet {
+  .reviews-slider {
+    padding-top: 16px;
+    padding-bottom: 60px;
+    &__title {
+      margin-bottom: 30px;
+    }
+    &__swiper {
+      margin-bottom: 38px;
+    }
+  }
+  .reviews-card {
+    &__body {
+      max-width: 100%;
+    }
+    &__text {
+      font-size: 18px;
+      line-height: 32px;
+      margin-bottom: 18px;
+    }
+    &__author {
+      font-size: 18px;
+    }
+  }
+}
+
+@include mobile {
+  .reviews-slider {
+    padding-top: 10px;
+    padding-bottom: 55px;
+    &__title {
+      margin-bottom: 28px;
+    }
+    &__swiper {
+      margin-bottom: 28px;
+    }
+    &__control {
+      justify-content: end;
+      gap: 7px;
+      margin-bottom: 14px;
+      &-btn {
+        width: 18px;
+        height: 18px;
+      }
+      &-pagination {
+        font-size: 13px;
+      }
+    }
+  }
+  .reviews-card {
+    background-color: rgba(210, 211, 211, 0.3);
+    border-radius: var(--border-radius);
+    padding: 18px 14px;
+    &__body {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    &__more {
+      font-size: 14px;
+      order: 3;
+      font-weight: 400;
+      color: var(--primary-color);
+      display: block;
+    }
+    &__text {
+      order: 2;
+      font-size: 14px;
+      overflow: hidden;
+      display: -webkit-box;
+      -webkit-line-clamp: 6;
+      -webkit-box-orient: vertical;
+      line-height: 26px;
+      margin-bottom: 0px;
+    }
+    &__author {
+      order: 1;
+      font-size: 16px;
+      margin-bottom: 0px;
+    }
+  }
+}

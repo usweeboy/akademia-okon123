@@ -1,0 +1,90 @@
+.breadcrumbs {
+  padding: 60px 0px;
+  &__list {
+    @include align-center;
+    flex-wrap: wrap;
+    gap: 4px 0px;
+  }
+  &__item {
+    position: relative;
+    &:not(:last-child) {
+      margin-right: 35px;
+      &::after {
+        content: '/';
+        position: absolute;
+        font-size: 15px;
+        color: var(--color-gray);
+        top: 2px;
+        right: -20px;
+        text-transform: uppercase;
+      }
+    }
+  }
+  &__link {
+    font-size: 15px;
+    color: var(--primary-color);
+    font-weight: 500;
+    &--current {
+      color: var(--color-gray);
+      cursor: default;
+      font-weight: 400;
+    }
+  }
+}
+
+@include tablet {
+  .breadcrumbs {
+    padding: 50px 0px;
+    &__item {
+      &:not(:last-child) {
+        margin-right: 32px;
+        &::after {
+          top: 3px;
+          font-size: 14px;
+          right: -18px;
+        }
+      }
+    }
+    &__link {
+      font-size: 14px;
+    }
+  }
+}
+
+@include phablet {
+  .breadcrumbs {
+    padding: 40px 0px;
+    &__item {
+      &:not(:last-child) {
+        margin-right: 28px;
+        &::after {          
+          top: 4px;
+          font-size: 13px;
+          right: -16px;
+        }
+      }
+    }
+    &__link {
+      font-size: 13px;
+    }
+  }
+}
+
+@include mobile {
+  .breadcrumbs {
+    padding: 30px 0px 35px 0px;
+    &__item {
+      &:not(:last-child) {
+        margin-right: 22px;
+        &::after {          
+          top: 5px;
+          font-size: 11px;
+          right: -13px;
+        }
+      }
+    }
+    &__link {
+      font-size: 11px;
+    }
+  }
+}

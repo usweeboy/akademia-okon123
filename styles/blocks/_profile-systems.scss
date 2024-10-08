@@ -1,0 +1,164 @@
+.profile-systems {
+  background-color: var(--color-gray-alt);
+  &__title {
+    margin-bottom: 32px;
+  }
+  &__slider {
+    border-radius: var(--border-radius);
+    position: relative;
+    &-control {
+      display: none;
+      color: var(--color-gray);
+    }
+    &-btn {
+      position: absolute;
+      top: 50%;
+      z-index: 2;
+      &__next {
+        right: 0;
+      }
+      &__prev {
+        left: 0;
+      }
+    }
+  }
+  &__card {
+    z-index: 1;
+    &-wrapper {
+      display: grid;
+      align-items: center;
+      grid-template-columns: repeat(2, 1fr);
+      background-color: var(--color-light);
+      padding: 24px 16px;
+      border-radius: var(--border-radius);
+      margin: 0 50px;
+      height: 100%;
+    }
+    &-image {
+      height: 250px;
+      margin: 0px auto;
+      object-fit: contain;
+    }
+    &-title {
+      text-align: center;
+      font-size: 21px;
+      font-weight: 600;
+      margin-bottom: 18px;
+    }
+    &-text {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      & p {
+        line-height: 23px;
+      }
+    }
+  }
+}
+
+@include tablet {
+  .profile-systems {
+    &__title {
+      margin-bottom: 28px;
+    }
+    &__slider {
+      &-btn {
+        & svg {
+          width: 36px;
+        }
+      }
+    }
+    &__card {
+      &-wrapper {
+        padding: 22px 14px;
+        margin: 0 45px;
+      }
+      &-image {
+        height: 220px;
+      }
+      &-title {
+        font-size: 18px;
+        margin-bottom: 14px;
+      }
+      &-text {
+        gap: 7px;
+        & p {
+          font-size: 15px;
+          line-height: 22px;
+        }
+      }
+    }
+  }
+}
+
+@include phablet {
+  .profile-systems {
+    &__title {
+      margin-bottom: 24px;
+    }
+    &__slider {
+      &-btn {
+        & svg {
+          width: 30px;
+        }
+      }
+    }
+    &__card {
+      &-wrapper {
+        padding: 20px;
+        gap: 30px;
+        margin: 0px 35px;
+        grid-template-columns: repeat(1, 1fr);
+      }
+    }
+  }
+}
+
+@include mobile {
+  .profile-systems {
+    &__title {
+      margin-bottom: 28px;
+    }
+    &__slider {
+      &-control {
+        color: var(--color-dark);
+        @include align-center;
+        justify-content: end;
+        gap: 7px;
+        margin-bottom: 14px;
+        &__btn {
+          width: 18px;
+          height: 18px;
+        }
+        &__pagination {
+          width: auto;
+          font-size: 13px;
+        }
+      }
+      &-btn {
+        display: none;
+      }
+    }
+    &__card {
+      &-wrapper {
+        padding: 16px;
+        gap: 24px;
+        margin: 0px;
+      }
+      &-image {
+        height: 200px;
+      }
+      &-title {
+        font-size: 16px;
+        margin-bottom: 12px;
+      }
+      &-text {
+        gap: 5px;
+        & p {
+          font-size: 14px;
+          line-height: 20px;
+        }
+      }
+    }
+  }
+}

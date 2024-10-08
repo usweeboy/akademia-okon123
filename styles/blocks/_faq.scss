@@ -1,0 +1,158 @@
+.faq {
+  padding-bottom: 70px;
+  &__inner {
+    max-width: 980px;
+    margin: 0px auto;
+  }
+  &__title {
+    margin-bottom: 56px;
+  }
+  &__item {
+    border-bottom: 1px solid var(--color-gray-alt);
+    &:first-child &-trigger {
+      padding-top: 0px;
+    }
+    &:last-child {
+      border-bottom: none;
+    }
+    &-trigger {
+      padding: 40px 0px;
+      @include align-center;
+      justify-content: space-between;
+      gap: 30px;
+      cursor: pointer;
+      &__title {
+        font-size: 20px;
+        line-height: 32px;
+      }
+      & svg {
+        min-width: 26px;
+        max-width: 26px;
+      }
+    }
+    &-content {
+      margin-top: -15px;
+      padding-bottom: 30px;
+      display: none;
+      & p {
+        font-size: 19px;
+        line-height: 37px;
+        color: var(--color-gray);
+      }
+      & a {
+        display: inline;
+        cursor: pointer;
+        text-decoration: underline;
+        font-weight: 500;
+      }
+    }
+    &--active &-content {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    &--active &-trigger {
+      & svg {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+@include tablet {
+  .faq {
+    padding-bottom: 55px;
+    &__title {
+      margin-bottom: 55px;
+    }
+    &__list {
+      padding: 0px 40px;
+    }
+    &__item {
+      &-trigger {
+        padding: 30px 0px;
+        &__title {
+          font-size: 19px;
+          line-height: 31px;
+        }
+        & svg {
+          min-width: 24px;
+          max-width: 24px;
+        }
+      }
+      &-content {
+        & p {
+          font-size: 16px;
+          line-height: 32px;
+        }
+      }
+    }
+  }
+}
+
+@include phablet {
+  .faq {
+    padding-bottom: 36px;
+    &__title {
+      margin-bottom: 45px;
+    }
+    &__list {
+      padding: 0px 20px;
+    }
+    &__item {
+      &-trigger {
+        &__title {
+          font-size: 17px;
+          line-height: 28px;
+        }
+        & svg {
+          min-width: 20px;
+          max-width: 20px;
+        }
+      }
+      &-content {
+        margin-top: -12px;
+        padding-bottom: 26px;
+        & p {
+          font-size: 14px;
+          line-height: 27px;
+        }
+      }
+      &--active &-content {
+        gap: 14px;
+      }
+    }
+  }
+}
+
+@include mobile {
+  .faq {
+    padding-bottom: 40px;
+    &__title {
+      text-align: start;
+      margin-bottom: 28px;
+    }
+    &__list {
+      padding: 0px;
+    }
+    &__item {
+      gap: 20px;
+      &-trigger {
+        padding: 22px 0px;
+        gap: 16px;
+        &__title {
+          font-size: 14px;
+          line-height: 22px;
+        }
+      }
+      &-content {
+        margin-top: -6px;
+        padding-bottom: 22px;
+        & p {
+          font-size: 13px;
+          line-height: 24px;
+        }
+      }
+    }
+  }
+}

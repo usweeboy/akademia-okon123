@@ -1,0 +1,61 @@
+.brands {
+  padding: 90px 0px 75px 0px;
+  &__title {
+    margin-bottom: 32px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+  }
+  &__item {
+    @include align-center;
+    &-image {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+}
+
+@include tablet {
+  .brands {
+    padding: 80px 0px 65px 0px;
+    &__title {
+      margin-bottom: 28px;
+    }
+    &__list {
+      gap: 30px;
+    }
+  }
+}
+
+@include phablet {
+  .brands {
+    padding: 70px 0px 55px 0px;
+    &__title {
+      margin-bottom: 30px;
+    }
+    &__list {
+      gap: 20px;
+    }
+  }
+}
+
+@include mobile {
+  .brands {
+    padding: 45px 0px 40px 0px;
+    &__list {
+      gap: 25px;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}
+
+@include small-mobile {
+  .brands {
+    &__list {
+      gap: 20px;
+    }
+  }
+}

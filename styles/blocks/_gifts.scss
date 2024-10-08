@@ -1,0 +1,117 @@
+.gifts {
+  background-color: var(--primary-color);
+  color: var(--color-light);
+  &__title {
+    margin-bottom: 30px;
+  }
+  &__list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    margin-bottom: 20px;
+    gap: 15px;
+  }
+  &__item {
+    @include align-center;
+    gap: 16px;
+    &-count {
+      font-size: 72px;
+      font-weight: 700;
+    }
+    &-text {
+      font-size: 18px;
+      font-weight: 500;
+    }
+  }
+  &__form {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    &-input {
+      color: var(--color-dark);
+      border: 1px solid rgba(255, 255, 255, 0.5);
+      background-color: var(--color-light);
+      &:focus {
+        border: 1px solid var(--color-light);
+      }
+    }
+    &-btn {
+      width: 100%;
+    }
+  }
+}
+
+@include tablet {
+  .gifts {
+    padding: 55px 0px 60px 0px;
+    &__form {
+      gap: 15px;
+    }
+    &__item {
+      gap: 14px;
+      &-count {
+        font-size: 60px;
+        width: 40px;
+        text-align: center;
+      }
+      &-text {
+        font-size: 14px;
+      }
+    }
+  }
+}
+
+@include phablet {
+  .gifts {
+    padding: 44px 0px 35px 0px;
+    &__body {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      gap: 30px;
+    }
+    &__list {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+    &__item {
+      gap: 12px;
+    }
+    &__form {
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+  }
+}
+
+@include mobile {
+  .gifts {
+    padding: 38px 0px 44px 0px;
+    &__body {
+      grid-template-columns: repeat(1, 1fr);
+      align-items: start;
+      gap: 0px;
+    }
+    &__title {
+      margin-bottom: 20px;
+    }
+    &__list {
+      gap: 8px;
+      margin-bottom: 20px;
+    }
+    &__item {
+      gap: 10px;
+      &-count {
+        font-size: 48px;
+      }
+      &-text {
+        line-height: 22px;
+        font-size: 14px;
+      }
+    }
+    &__form {
+      gap: 14px;
+    }
+  }
+}
